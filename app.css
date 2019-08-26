@@ -69,7 +69,7 @@ input, textarea, select {
   src: url(fonts/jost-book.woff), url(fonts/jost-book.woff2);
 }
 body {
-  background-color: #f70201;
+  background-color: #ca774a;
   color: #fff;
   font-family: "Jost";
   font-size: 24px;
