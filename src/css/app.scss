@@ -1,0 +1,43 @@
+@import "reset";
+@import "typography";
+
+$primary-color: #ca774a;
+$body-font: "Jost";
+$body-size: 24px;
+$mq-large: 800px;
+$mq-medium: 600px;
+
+@mixin mq($width) {
+    @content;
+}
+
+@mixin vertically-middle () {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    background-color: $primary-color;
+    color: #fff;
+    font-family: $body-font;
+    font-size: $body-size;
+    line-height: 1.5;
+
+    height: 100vh;
+    @include vertically-middle();
+}
+
+section {
+    width: 500px;
+
+    @include mq($mq-medium) {
+        width: 350px;
+        font-size: 16px;
+    }
+
+    p {
+        margin: 24px 0 0 0;
+    }
+}

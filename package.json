@@ -1,0 +1,29 @@
+{
+  "name": "tropicali",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/williamsandrewjacob/tropicali.git"
+  },
+  "author": "Andrew Williams",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/williamsandrewjacob/tropicali/issues"
+  },
+  "homepage": "https://github.com/williamsandrewjacob/tropicali#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-imagemin": "^6.1.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "node-sass": "^4.12.0"
+  },
+  "dependencies": {},
+  "description": "tropicali is a new restaurant in the heart of Santa Fe, New Mexico."
+}
