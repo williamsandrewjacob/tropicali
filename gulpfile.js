@@ -4,6 +4,7 @@ const imagemin = require('gulp-imagemin')
 const sass = require('gulp-sass')
 const sourcemaps = require('gulp-sourcemaps')
 const browserSync = require('browser-sync').create()
+const ghpages = require('gh-pages')
 
 sass.compiler = require('node-sass')
 
@@ -62,9 +63,15 @@ function watchSRC() {
     watch('src/img/*', images)
 }
 
+function deploy(done) {
+    ghpages.publish('dist')
+    done()
+}
+
 exports.html = html
 exports.sass = compileSass
 exports.fonts = fonts
 exports.images = images
 exports.watch = watchSRC
+exports.deploy = deploy
 exports.default = series(html, compileSass, fonts, images, watchSRC)
