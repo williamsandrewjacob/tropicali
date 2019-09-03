@@ -1,21 +1,41 @@
 const { src, dest, watch, series } = require('gulp')
+const postcss = require('gulp-postcss')
 const cleanCSS = require('gulp-clean-css')
+const concat = require('gulp-concat')
 const imagemin = require('gulp-imagemin')
-const sass = require('gulp-sass')
 const sourcemaps = require('gulp-sourcemaps')
 const browserSync = require('browser-sync').create()
 const ghpages = require('gh-pages')
 
-sass.compiler = require('node-sass')
-
-function compileSass(done) {
-    // We want to run 'sass css/app.scss app.css --watch'
-    src('src/css/app.scss')
+function compileCSS(done) {
+    // We want to complete the same task(s) as before but with PostCSS
+    src([
+        'src/css/reset.css',
+        'src/css/typography.css',
+        'src/css/app.css'
+    ])
     // initialize gulp-sourcemaps
     .pipe(sourcemaps.init())
-    .pipe(sass())
+    .pipe(
+        postcss([  
+            require('autoprefixer'),
+            require('postcss-preset-env')({
+                stage: 1,
+                browsers: [
+                    'IE 11', 
+                    'last 2 versions'
+                ]
+            })
+        ])
+    )
+    // concatenate the stylesheets
+    .pipe(concat('app.css'))
     // minify 'app.css'
-    .pipe(cleanCSS({ compatibility: 'ie8' }))
+    .pipe(
+        cleanCSS({ 
+            compatibility: 'ie8' 
+        })
+    )
     // write to gulp-sourcemaps
     .pipe(sourcemaps.write())
     // 'app.css'
@@ -58,7 +78,7 @@ function watchSRC() {
     })
     // Watch 'src/'
     watch('src/*.html', html).on('change', browserSync.reload)
-    watch('src/css/app.scss', compileSass)
+    watch('src/css/*', compileCSS)
     watch('src/fonts/*', fonts)
     watch('src/img/*', images)
 }
@@ -69,9 +89,16 @@ function deploy(done) {
 }
 
 exports.html = html
-exports.sass = compileSass
+exports.css = compileCSS
 exports.fonts = fonts
 exports.images = images
 exports.watch = watchSRC
 exports.deploy = deploy
-exports.default = series(html, compileSass, fonts, images, watchSRC)
+exports.default = series(
+    html, 
+    compileCSS,
+    fonts, 
+    images, 
+    watchSRC,
+    deploy
+)
