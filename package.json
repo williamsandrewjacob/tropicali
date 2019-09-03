@@ -16,13 +16,18 @@
   },
   "homepage": "https://github.com/williamsandrewjacob/tropicali#readme",
   "devDependencies": {
+    "autoprefixer": "^9.6.1",
     "browser-sync": "^2.26.7",
+    "gh-pages": "^2.1.1",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1",
     "gulp-imagemin": "^6.1.0",
+    "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
-    "node-sass": "^4.12.0"
+    "node-sass": "^4.12.0",
+    "postcss-preset-env": "^6.7.0"
   },
   "dependencies": {},
   "description": "tropicali is a new restaurant in the heart of Santa Fe, New Mexico."
