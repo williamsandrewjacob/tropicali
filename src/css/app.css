@@ -1,5 +1,6 @@
 @custom-media --mq-small (max-width: 500px);
 @custom-media --mq-medium (max-width: 900px);
+@custom-media --mq-large (min-width: 1441px);
 
 :root {
     --primary-color: #f70201;
@@ -67,7 +68,7 @@ header {
 
 section.grid {
     max-width: var(--grid-width);
-    margin: 0 auto 0 auto;
+    margin: 0 var(--main-spacing) 0 var(--main-spacing);
 }
 
 section.full-width {
@@ -148,10 +149,14 @@ section.centered.footer {
     padding: var(--section-spacing-lg) 0 var(--section-spacing-lg) 0;
 }
 
+@media (--mq-large) {
+    section.grid {
+        margin: 0 auto 0 auto;
+    }
+}
+
 @media (--mq-medium) {
     section.grid {
-        margin: 0 var(--main-spacing) 0 var(--main-spacing);
-        
         grid-template-columns: 1fr;
     }
 
