@@ -17,10 +17,8 @@
 
     --gutter: 48px;
 
-    --section-padding-md: 90px;
-    --section-padding-lg: 120px;
-
     --header-height: 80px;
+
     --hero-height: 820px;
 
     --cta-height: 1140px;
@@ -29,23 +27,28 @@
     --grid-width: 1344px;
     --grid-gap: 64px;
 
-    --logo-height: 32px;
+    --section-padding: 120px;
+    --section-spacer: 90px;
+
+    --logo-height: 31.9px;
     --logo-width: 100%;
 
-    --text-block-width-md: 486px;
-    --text-block-width-lg: 634px;
-    --text-margin-md: 40px;
-    --text-margin-lg: 64px;
+    --text-block-width-md: 634px;
+    --text-block-width-sm: 486px;
+
+    --text-margin: 40px;
 
     --button-height: 64px;
     --button-width: 200px;
     --button-padding: 32px;
+    --button-margin: 64px;
 }
 
 @media (--media-md) {
     :root {
         --gutter: 24px;
-        --text-block-width-md: 100%;
+
+        --text-block-width-sm: 100%;
     }
 }
 
@@ -53,13 +56,16 @@
     :root {
         --hero-height: calc(50vh - var(--header-height));
         --cta-height: 70vh;
+
         --logo-height: 22.15px;
         --logo-width: 150.25px;
-        --text-margin-md: 20px;
-        --text-margin-lg: 48px;
+
+        --text-margin: 20px;
+
         --button-height: 48px;
         --button-width: none;
         --button-padding: 24px;
+        --button-margin: 48px;
     }
 }
 
@@ -67,92 +73,12 @@ body {
     background-color: var(--body-color);
 }
 
-header {
-    background-color: var(--primary-color);
-
-    height: var(--header-height);
-    padding: 0 var(--gutter) 0 var(--gutter);
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+h1, h2, h3 {
+    margin-bottom: var(--text-margin);
 }
 
-.logo {
-    height: var(--logo-height);
-}
-
-.logo img {
-    width: var(--logo-width);
-    height: auto;
-    vertical-align: baseline;
-}
-
-section.full-width {
-    background-color: var(--image-placeholder);
-    color: var(--text-on-dark-bg);
-
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    text-align: center;
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-section.full-width.hero {
-    height: var(--hero-height);
-
-    background-image: image-set( "img/rainbow.jpg" 1x, "img/rainbow@2x.jpg" 2x );
-    background-size: cover;
-    background-position: center;
-}
-
-section.full-width.cta {
-    height: var(--cta-height);
-    margin: var(--cta-margin) 0 var(--cta-margin) 0;
-
-    background-image: image-set( "img/green-wall.jpg" 1x, "img/green-wall@2x.jpg" 2x );
-    background-size: cover;
-    background-position: center;
-}
-
-section.full-width h2 {
-    margin-bottom: var(--text-margin-lg);
-}
-
-section.grid {
-    max-width: var(--grid-width);
-    margin: 0 auto 0 auto;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: var(--grid-gap);
-    align-items: center;
-}
-
-section.grid.about {
-    padding-top: var(--section-padding-lg);
-}
-
-section.grid.img {
-    padding-top: var(--section-padding-md);
-}
-
-.text-block {
-    margin: 0 auto 0 auto;
-}
-
-section.grid .text-block {
-    max-width: var(--text-block-width-md);
-}
-
-section.grid h2 {
-    margin-bottom: var(--text-margin-md);
-}
-
-section.grid p {
-    margin-bottom: var(--text-margin-lg);
+.full-width h1, .full-width h2, .full-width h3 {
+    margin: 0;
 }
 
 .button {
@@ -160,9 +86,13 @@ section.grid p {
     height: var(--button-height);
     min-width: var(--button-width);
     color: var(--text-on-dark-bg);
-    padding: 0 var(--button-padding) 0 var(--button-padding);
+    padding: 0 var(--button-padding);
     line-height: var(--button-height);
     text-align: center;
+}
+
+.text-block .button {
+    margin-top: var(--button-margin);
 }
 
 .button-primary {
@@ -175,42 +105,118 @@ section.grid p {
     border: thin solid var(--text-on-dark-bg);
 }
 
+header {
+    background-color: var(--primary-color);
+
+    height: var(--header-height);
+    padding: 0 var(--gutter);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: var(--logo-height);
+}
+
+.logo img {
+    width: var(--logo-width);
+    vertical-align: baseline;
+}
+
+section {
+    padding-top: var(--section-padding); 
+}
+
+section.full-width, section.centered {
+    padding: 0;
+}
+
+.full-width {
+    background-color: var(--image-placeholder);
+    color: var(--text-on-dark-bg);
+
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    background-image: inherit;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero {
+    height: var(--hero-height);
+
+    background-image: image-set( "img/rainbow.jpg" 1x, "img/rainbow@2x.jpg" 2x );
+}
+
+.cta {
+    height: var(--cta-height);
+    margin: var(--cta-margin) 0;
+
+    background-image: image-set( "img/green-wall.jpg" 1x, "img/green-wall@2x.jpg" 2x );
+}
+
+.grid, .centered, .text-block {
+    margin: 0 auto;
+}
+
+.grid {
+    max-width: var(--grid-width);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: var(--grid-gap);
+    align-items: center;
+}
+
+.grid .text-block {
+    max-width: var(--text-block-width-sm);
+}
+
 .centered {
-    margin: 0 auto 0 auto;
     text-align: center;
 }
 
-section.centered .text-block {
-    max-width: var(--text-block-width-lg);
+.centered .text-block {
+    max-width: var(--text-block-width-md);
+    margin-bottom: var(--section-spacer);
 }
 
-footer.centered {
-    padding: var(--section-padding-lg) 0 var(--section-padding-lg) 0;
+footer {
+    padding: var(--section-padding) 0;
 }
 
 @media (--media-lg) {
-    section.grid {
-        margin: 0 var(--gutter) 0 var(--gutter);
+    .grid {
+        margin: 0 var(--gutter);
     }
 }
 
 @media (--media-md) {
-    section.grid {
+    .grid {
         grid-template-columns: 1fr;
     }
 
-    section.grid img {
+    .grid img {
         width: 100%;
-        height: auto;
     }
 
-    section.grid .text-block {
+    .grid .text-block {
         margin: 0;
     }
 }
 
 @media (--media-sm) {
-    section.centered {
-        margin: 0 var(--gutter) 0 var(--gutter);
+    .centered {
+        margin: 0 var(--gutter);
+    }
+    .centered .grid {
+        margin: 0;
     }
 }

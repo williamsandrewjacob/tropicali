@@ -1,5 +1,5 @@
-@custom-media --mq-medium (max-width: 900px);
-@custom-media --mq-small (max-width: 500px);
+@custom-media --media-md (max-width: 900px);
+@custom-media --media-am (max-width: 500px);
 
 @font-face {
     font-family: "Jost";
@@ -28,7 +28,7 @@
     --button-size: 16px;
 }
 
-@media (--mq-medium) {
+@media (--media-md) {
     :root {
         --h1-size: 64px;
         --h2-size: 48px;
@@ -38,7 +38,7 @@
     }
 }
 
-@media (--mq-small) {
+@media (--media-sm) {
     :root {
         --h1-size: 40px;
         --h2-size: 32px;
