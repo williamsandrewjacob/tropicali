@@ -1,5 +1,5 @@
 @custom-media --media-md (max-width: 900px);
-@custom-media --media-am (max-width: 500px);
+@custom-media --media-sm (max-width: 500px);
 
 @font-face {
     font-family: "Jost";
