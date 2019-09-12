@@ -55,6 +55,7 @@
 @media (--media-sm) {
     :root {
         --hero-height: calc(50vh - var(--header-height));
+
         --cta-height: 70vh;
 
         --logo-height: 22.15px;
@@ -63,7 +64,7 @@
         --text-margin: 20px;
 
         --button-height: 48px;
-        --button-width: none;
+        --button-width: auto;
         --button-padding: 24px;
         --button-margin: 48px;
     }
@@ -103,10 +104,6 @@ body {
     mix-blend-mode: lighten;
 }
 
-.text-block {
-    margin-left: auto;
-    margin-right: auto;
-}
 .text-block.center {
     text-align: center;
 }
@@ -165,7 +162,7 @@ section.full-width {
 }
 
 section div {
-    margin-bottom: var(--section-spacer);
+    margin: 0 auto var(--section-spacer) auto;
 }
 
 section div:last-child {
@@ -207,8 +204,6 @@ section div:last-child {
 
 .grid {
     max-width: var(--grid-width);
-    margin-left: auto;
-    margin-right: auto;
 
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -231,7 +226,7 @@ section div:last-child {
         width: 100%;
     }
 
-    @supports(padding:max(24px)) {
+    @supports(padding:max(0px)) {
         header, .full-width {
             padding-left: max(24px, env(safe-area-inset-left));
             padding-right: max(24px, env(safe-area-inset-right));
