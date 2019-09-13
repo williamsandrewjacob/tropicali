@@ -231,9 +231,5 @@ section div:last-child {
             padding-left: max(24px, env(safe-area-inset-left));
             padding-right: max(24px, env(safe-area-inset-right));
         }
-        section div {
-            margin-left: max(24px, env(safe-area-inset-left));
-            margin-right: max(24px, env(safe-area-inset-right));
-        }
     }
 }
