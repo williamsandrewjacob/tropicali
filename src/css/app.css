@@ -225,11 +225,11 @@ section div:last-child {
     .grid img {
         width: 100%;
     }
+}
 
-    @supports(padding:max(0px)) {
-        header {
-            padding-left: max(24px, env(safe-area-inset-left));
-            padding-right: max(24px, env(safe-area-inset-right));
-        }
+@supports(padding:max(0px)) {
+    header, .hero, .cta {
+        padding-left: max(24px, env(safe-area-inset-left));
+        padding-right: max(24px, env(safe-area-inset-right));
     }
 }
