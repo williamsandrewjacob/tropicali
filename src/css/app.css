@@ -226,10 +226,3 @@ section div:last-child {
         width: 100%;
     }
 }
-
-@supports(padding: max(0px)) {
-    header {
-        padding-left: max(24px, env(safe-area-inset-left));
-        padding-right: max(24px, env(safe-area-inset-right));
-    }
-}
