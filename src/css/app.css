@@ -228,7 +228,7 @@ section div:last-child {
 }
 
 @supports(padding:max(0px)) {
-    header, .hero, .cta {
+    header {
         padding-left: max(24px, env(safe-area-inset-left));
         padding-right: max(24px, env(safe-area-inset-right));
     }
