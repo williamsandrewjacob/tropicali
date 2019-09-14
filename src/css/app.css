@@ -228,7 +228,12 @@ section div:last-child {
 }
 
 @supports(padding: max(0px)) {
-    header, .grid {
+    header {
+        padding-left: max(24px, env(safe-area-inset-left));
+        padding-right: max(24px, env(safe-area-inset-right));
+    }
+
+    .grid {
         padding-left: min(24px, env(safe-area-inset-left));
         padding-right: min(24px, env(safe-area-inset-right));
     }
