@@ -7,7 +7,7 @@ const sourcemaps = require('gulp-sourcemaps')
 const browserSync = require('browser-sync').create()
 const ghpages = require('gh-pages')
 
-function compileCSS(done) {
+function css(done) {
     // We want to complete the same task(s) as before but with PostCSS
     src([
         'src/css/reset.css',
@@ -68,7 +68,7 @@ function images(done) {
     done()
 }
 
-function watchSRC() {
+function listen() {
     // initialize browserSync static server
     browserSync.init({
         server: {
@@ -78,7 +78,7 @@ function watchSRC() {
     })
     // Watch 'src/'
     watch('src/*.html', html).on('change', browserSync.reload)
-    watch('src/css/*', compileCSS)
+    watch('src/css/*', css)
     watch('src/fonts/*', fonts)
     watch('src/img/*', images)
 }
@@ -88,17 +88,17 @@ function deploy(done) {
     done()
 }
 
+exports.css = css
 exports.html = html
-exports.css = compileCSS
 exports.fonts = fonts
 exports.images = images
-exports.watch = watchSRC
+exports.listen = listen
 exports.deploy = deploy
 exports.default = series(
-    html, 
-    compileCSS,
+    css,
+    html,
     fonts, 
     images, 
-    watchSRC,
+    listen,
     deploy
 )
