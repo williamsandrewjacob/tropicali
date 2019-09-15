@@ -85,7 +85,7 @@ body {
     line-height: var(--button-height);
     text-align: center;
 
-    transition: ease-out 0.3s;
+    transition: ease 0.5s;
 }
 
 .button-secondary {
