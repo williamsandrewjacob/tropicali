@@ -30,7 +30,6 @@
     --section-padding: 120px;
     --section-spacer: 90px;
 
-    --logo-height: 31.9px;
     --logo-width: 100%;
 
     --text-block-width-md: 634px;
@@ -63,7 +62,6 @@
 
         --cta-height: 70vh;
 
-        --logo-height: 22.15px;
         --logo-width: 150.25px;
 
         --text-margin: 20px;
@@ -127,7 +125,7 @@ body {
     margin-top: var(--button-margin);
 }
 
-header, footer {
+header, footer, .logo {
     display: flex;
     align-items: center;
 }
@@ -141,19 +139,14 @@ header {
     justify-content: space-between;
 }
 
-.logo {
-    height: var(--logo-height);
-}
-
-.logo img {
-    width: var(--logo-width);
-    vertical-align: baseline;
-}
-
 footer {
     padding: var(--section-padding) 0;
 
     justify-content: center;
+}
+
+.logo img {
+    width: var(--logo-width);
 }
 
 section {
