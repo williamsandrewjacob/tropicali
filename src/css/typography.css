@@ -43,15 +43,15 @@
 
     /* Spicy = Bagnard/Jost */
     /* Smooth = Calafia/Roboto Mono */
-    --title-font: var(--bagnard);
-    --body-font: var(--jost);
+    --title-font: var(--calafia);
+    --body-font: var(--roboto-mono);
 
     --size-lg: 24px;
     --size-sm: 18px;
 
     /* Spicy = 24px */
     /* Smooth = 18px */
-    --body-size: var(--size-lg);
+    --body-size: var(--size-sm);
     --h1-size: 96px;
     --h2-size: 64px;
     --h3-size: 32px;
@@ -62,7 +62,7 @@
 
     /* Spicy = 1.6 */
     /* Smooth = 2.2 */
-    --body-line-height: var(--height-sm);
+    --body-line-height: var(--height-lg);
 }
 
 @media (--media-md) {

@@ -13,7 +13,7 @@
 
     /* Spicy = --salsa */
     /* Smooth = --caramel */
-    --primary-color: var(--salsa);
+    --primary-color: var(--caramel);
 
     --text-on-light-bg: var(--black);
     --text-on-dark-bg: var(--white);
@@ -37,7 +37,7 @@
 
     /* Spicy = --gap-lg */
     /* Smooth = --gap-sm */
-    --grid-gap: var(--gap-lg);
+    --grid-gap: var(--gap-sm);
 
     --section-padding: 120px;
     --section-spacer: 90px;
@@ -49,7 +49,7 @@
 
     /* Spicy = --width-sm */
     /* Smooth = --width-lg */
-    --text-block-width-md: var(--width-sm);
+    --text-block-width-md: var(--width-lg);
     --text-block-width-sm: 486px;
 
     --text-margin: 40px;
@@ -120,7 +120,7 @@ body {
 /* Spicy = h3 */
 .text-block h3 {
     /* Toggle off for Spicy */
-    /* display: none; */
+    display: none;
 }
 
 .text-block p {
@@ -130,7 +130,7 @@ body {
 /* Smooth = p.lead */
 .text-block .lead {
     /* Toggle off for Smooth */
-    display: none;
+    /* display: none; */
     margin-top: 0;
 }
 
