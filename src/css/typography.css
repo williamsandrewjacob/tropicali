@@ -3,13 +3,13 @@
 
 @font-face {
     font-family: "Jost";
-    font-weight: 400;
+    font-weight: normal;
     src: url(fonts/jost-book.woff2), url(fonts/jost-book.woff);
 }
 
 @font-face {
     font-family: "Jost";
-    font-weight: 700;
+    font-weight: bold;
     src: url(fonts/jost-semi.woff2), url(fonts/jost-semi.woff);
 }
 
@@ -18,22 +18,59 @@
     src: url(fonts/bagnard.woff2), url(fonts/bagnard.woff);
 }
 
+@font-face {
+    font-family: "Roboto Mono";
+    font-weight: normal;
+    src: url(fonts/roboto-mono-light.woff2), url(fonts/roboto-mono-light.woff);
+}
+
+@font-face {
+    font-family: "Roboto Mono";
+    font-weight: bold;
+    src: url(fonts/roboto-mono-medium.woff2), url(fonts/roboto-mono-medium.woff);
+}
+
+@font-face {
+    font-family: "Calafia";
+    src: url(fonts/calafia.woff2), url(fonts/calafia.woff);
+}
+
 :root {
-    --title-font: "Bagnard", serif;
-    --body-font: "Jost", sans-serif;
+    --bagnard: "Bagnard", serif;
+    --jost: "Jost", sans-serif;
+    --calafia: "Calafia", cursive;
+    --roboto-mono: "Roboto Mono", monospace;
+
+    /* Spicy = Bagnard/Jost */
+    /* Smooth = Calafia/Roboto Mono */
+    --title-font: var(--bagnard);
+    --body-font: var(--jost);
+
+    --size-lg: 24px;
+    --size-sm: 18px;
+
+    /* Spicy = 24px */
+    /* Smooth = 18px */
+    --body-size: var(--size-lg);
     --h1-size: 96px;
     --h2-size: 64px;
     --h3-size: 32px;
-    --body-size: 24px;
     --button-size: 16px;
+
+    --height-lg: 2.2;
+    --height-sm: 1.6;
+
+    /* Spicy = 1.6 */
+    /* Smooth = 2.2 */
+    --body-line-height: var(--height-sm);
 }
 
 @media (--media-md) {
     :root {
+        --body-size: 16px;
         --h1-size: 64px;
         --h2-size: 48px;
         --h3-size: 24px;
-        --body-size: 16px;
         --button-size: 14px;
     }
 }
@@ -48,7 +85,7 @@
 body {
     font-family: var(--body-font);
     font-size: var(--body-size);
-    line-height: 1.6;
+    line-height: var(--body-line-height);
 }
 
 h1, h2, h3 {
@@ -68,10 +105,16 @@ h3 {
     font-size: var(--h3-size);
 }
 
+.lead {
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
 .button {
     font-size: var(--button-size);
-    font-weight: 700;
+    font-weight: bold;
     letter-spacing: 3px;
+    text-align: center;
     text-transform: uppercase;
     text-decoration: none;
 }

@@ -3,17 +3,23 @@
 @custom-media --media-sm (max-width: 500px);
 
 :root {
-    --primary-color: #f70201;
-
+    --salsa: #f70201;
+    --caramel: #ca774a;
     --yellow: #fed859;
-    --green: #2a9556;
-    --light-blue: #81b2db;
+    --verde: #2a9556;
+    --sky-blue: #81b2db;
+    --white: #ffffff;
+    --black: #151620;
 
-    --text-on-light-bg: #151620;
-    --text-on-dark-bg: #ffffff;
+    /* Spicy = --salsa */
+    /* Smooth = --caramel */
+    --primary-color: var(--salsa);
 
-    --body-color: #ffffff;
-    --image-placeholder-bg: #eeeeee;
+    --text-on-light-bg: var(--black);
+    --text-on-dark-bg: var(--white);
+
+    --body-color: var(--white);
+    --image-placeholder-bg: var(--black);
 
     --gutter: 48px;
 
@@ -25,14 +31,25 @@
     --cta-margin: 88px;
 
     --grid-width: 1344px;
-    --grid-gap: 64px;
+
+    --gap-lg: 64px;
+    --gap-sm: 32px;
+
+    /* Spicy = --gap-lg */
+    /* Smooth = --gap-sm */
+    --grid-gap: var(--gap-lg);
 
     --section-padding: 120px;
     --section-spacer: 90px;
 
     --logo-width: 100%;
 
-    --text-block-width-md: 634px;
+    --width-lg: 751px;
+    --width-sm: 634px;
+
+    /* Spicy = --width-sm */
+    /* Smooth = --width-lg */
+    --text-block-width-md: var(--width-sm);
     --text-block-width-sm: 486px;
 
     --text-margin: 40px;
@@ -41,11 +58,6 @@
     --button-width: 200px;
     --button-padding: 32px;
     --button-margin: 64px;
-
-    --button-bg: var(--primary-color);
-    --button-bg-hover: #f93534;
-    --button-secondary-border: rgba(255, 255, 255, 0.7);
-    --button-secondary-border-hover: rgba(255, 255, 255, 1);
 }
 
 @media (--media-md) {
@@ -81,28 +93,16 @@ body {
     display: inline-block;
     height: var(--button-height);
     min-width: var(--button-width);
-    background-color: var(--button-bg);
+    background-color: var(--primary-color);
     color: var(--text-on-dark-bg);
     padding: 0 var(--button-padding);
     border: 1px solid var(--primary-color);
     line-height: var(--button-height);
-    text-align: center;
-
-    transition: ease 0.5s;
-}
-
-.button:hover {
-    background-color: var(--button-bg-hover);
 }
 
 .button-secondary {
     background-color: transparent;
-    border: 1px solid var(--button-secondary-border);
-}
-
-.button-secondary:hover {
-    background-color: transparent;
-    border: 1px solid var(--button-secondary-border-hover);
+    border: 1px solid var(--white);
 }
 
 .text-block.center {
@@ -117,8 +117,21 @@ body {
     max-width: var(--text-block-width-sm);
 }
 
+/* Spicy = h3 */
+.text-block h3 {
+    /* Toggle off for Spicy */
+    /* display: none; */
+}
+
 .text-block p {
     margin-top: var(--text-margin);
+}
+
+/* Smooth = p.lead */
+.text-block .lead {
+    /* Toggle off for Smooth */
+    display: none;
+    margin-top: 0;
 }
 
 .text-block .button {

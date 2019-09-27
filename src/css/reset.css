@@ -63,3 +63,7 @@ input, textarea, select {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
+
+*::selection {
+  background-color: transparent;
+}
