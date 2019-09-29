@@ -41,28 +41,24 @@
     --calafia: "Calafia", cursive;
     --roboto-mono: "Roboto Mono", monospace;
 
-    /* Spicy = Bagnard/Jost */
-    /* Smooth = Calafia/Roboto Mono */
-    --title-font: var(--bagnard);
-    --body-font: var(--jost);
-
-    --size-lg: 24px;
-    --size-sm: 18px;
-
-    /* Spicy = 24px */
-    /* Smooth = 18px */
-    --body-size: var(--size-lg);
     --h1-size: 96px;
     --h2-size: 64px;
     --h3-size: 32px;
     --button-size: 16px;
+}
 
-    --height-lg: 2.2;
-    --height-sm: 1.6;
+[data-theme="spicy"] {
+    --title-font: var(--bagnard);
+    --body-font: var(--jost);
+    --body-size: 24px;
+    --body-line-height: 1.6;
+}
 
-    /* Spicy = 1.6 */
-    /* Smooth = 2.2 */
-    --body-line-height: var(--height-sm);
+[data-theme="smooth"] {
+    --title-font: var(--calafia);
+    --body-font: var(--roboto-mono);
+    --body-size: 18px;
+    --body-line-height: 2.2;
 }
 
 @media (--media-md) {
