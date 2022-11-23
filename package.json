@@ -17,7 +17,7 @@
   "homepage": "https://github.com/williamsandrewjacob/tropicali#readme",
   "devDependencies": {
     "autoprefixer": "^9.6.1",
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.27.10",
     "gh-pages": "^2.1.1",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.2.0",
